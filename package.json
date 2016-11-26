@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "check": "node_modules/.bin/flow check || true",
     "compile": "flow check && node_modules/.bin/babel src --out-dir build || true",
+    "update-flow-definitions": "node_modules/.bin/flow-typed install --flowVersion=0.35.0",
     "watch": "node_modules/.bin/babel --watch src --out-dir build || true"
   },
   "author": "David Koontz",
@@ -22,6 +23,12 @@
     "babel-plugin-transform-es2015-parameters": "^6.18.0",
     "babel-plugin-transform-flow-strip-types": "^6.18.0",
     "babel-plugin-transform-object-rest-spread": "^6.19.0",
-    "babel-preset-stage-0": "^6.16.0"
+    "babel-preset-stage-0": "^6.16.0",
+    "flow-typed": "^2.0.0",
+    "jest": "^17.0.3",
+    "jest-cli": "^17.0.3"
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }
